@@ -14,6 +14,7 @@ const navItems: { label: string; page?: string; link?: string }[] = [
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
 interface Props {
+  titlePre: string;
   title: string;
 
 }
