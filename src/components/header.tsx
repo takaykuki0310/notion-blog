@@ -13,7 +13,12 @@ const navItems: { label: string; page?: string; link?: string }[] = [
 
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
-export default ({ titlePre = '', title }) => {
+interface Props {
+  title: string;
+
+}
+
+export default ({ titlePre = '', title } : Props ) => {
   const { pathname } = useRouter()
 
   return (
