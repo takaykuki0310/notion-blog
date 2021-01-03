@@ -25,6 +25,7 @@ export default ({ titlePre = '' } ) => {
         <meta name="og:title" content={ titlePre } />
         <meta property="og:image" content={ogImageUrl} />
         <meta name="twitter:site" content="@_ijjk" />
+        <meta name="twitter:title" content={ titlePre } />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
