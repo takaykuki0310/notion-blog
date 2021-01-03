@@ -13,13 +13,8 @@ const navItems: { label: string; page?: string; link?: string }[] = [
 
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
 
-interface Props {
-  titlePre: string;
-  title: string;
 
-}
-
-export default ({ titlePre = '', title } : Props ) => {
+export default ({ titlePre = '' } ) => {
   const { pathname } = useRouter()
 
   return (
@@ -27,7 +22,7 @@ export default ({ titlePre = '', title } : Props ) => {
       <Head>
         <title>{titlePre ? `${titlePre} |` : ''} blog</title>
         <meta name="description" content="A blog" />
-        <meta name="og:title" content={ title } />
+        <meta name="og:title" content={ titlePre } />
         <meta property="og:image" content={ogImageUrl} />
         <meta name="twitter:site" content="@_ijjk" />
         <meta name="twitter:card" content="summary_large_image" />

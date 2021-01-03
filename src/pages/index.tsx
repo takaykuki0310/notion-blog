@@ -47,7 +47,7 @@ export async function getStaticProps({ preview }) {
 export default ({ posts = [], preview }) => {
   return (
     <>
-      <Header titlePre="Top" title="blog" />
+      <Header titlePre="Top" />
       {preview && (
         <div className={blogStyles.previewAlertContainer}>
           <div className={blogStyles.previewAlert}>

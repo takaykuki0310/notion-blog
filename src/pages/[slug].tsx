@@ -138,7 +138,7 @@ const RenderPost = ({ post, redirect, preview }) => {
 
   return (
     <>
-      <Header titlePre={post.Page} title={post.Title} />
+      <Header titlePre={post.Page} />
       {preview && (
         <div className={blogListStyles.previewAlertContainer}>
           <div className={blogListStyles.previewAlert}>
