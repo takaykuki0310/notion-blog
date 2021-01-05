@@ -4,7 +4,7 @@
   --gap: 1rem;
   --gap-double: 2rem;
 
-  --bg: #f9fafb;
+  --bg: #fff;
   --fg: #000;
   --accents-1: #111;
   --accents-2: #333;
@@ -58,7 +58,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 body {
@@ -69,11 +69,43 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     var(--font-ja-gothic), sans-serif;
 
-  /*background-image: radial-gradient(#ddd 1px, transparent 1px),*/
-  /*  radial-gradient(#ddd 1px, transparent 1px);*/
-  background-position: 0 0, 25px 25px;
+  background-image: linear-gradient(
+      -45deg,
+      #fff 0,
+      #fff 1.9rem,
+      transparent 1.9rem,
+      transparent 2.34rem,
+      #fff 2.34rem,
+      #fff
+    ),
+    linear-gradient(
+      45deg,
+      #fff 0,
+      #fff 1.9rem,
+      transparent 1.9rem,
+      transparent 2.34rem,
+      #fff 2.34rem,
+      #fff
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 2.08rem,
+      #ddd 2.12rem,
+      transparent 2.16rem,
+      transparent
+    ),
+    linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 2.08rem,
+      #ddd 2.12rem,
+      transparent 2.16rem,
+      transparent
+    );
   background-attachment: fixed;
-  background-size: 50px 50px;
+  background-position: 0 0, 1.5rem 1.5rem, 0 0, 1.5rem 1.5rem;
+  background-size: 3rem 3rem;
 
   /* Hack */
   overflow-x: hidden;
@@ -283,13 +315,12 @@ figure {
 }
 
 a {
-  color: var(--accents-1);
+  color: #0070f3;
   text-decoration: none;
 }
 a:hover {
   cursor: pointer;
-  text-decoration: underline;
-  color: var(--accents-3);
+  color: #3291ff;
 }
 
 .links {
@@ -311,17 +342,33 @@ mark {
 }
 
 h1 {
+  font-family: var(--font-mono);
   margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
-  font-family: var(--font-mono), var(--font-ja-gothic);
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
+  letter-spacing: 0.09em;
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: var(--accents-2);
 }
 
 h2 {
-  font-weight: 700;
-  font-size: 1.4rem;
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 1.25rem;
   letter-spacing: -0.02rem;
+  color: var(--accents-2);
+}
+
+h3 {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  letter-spacing: -0.02rem;
+  color: var(--accents-2);
+}
+
+h3::before {
+  content: '> ';
 }
 
 .video {
@@ -339,7 +386,7 @@ h2 {
 }
 
 p {
-  color: #333;
+  color: #555;
   font-family: var(--font-mono), var(--font-ja-gothic);
   font-weight: 400;
   font-size: 0.94rem;
@@ -356,7 +403,6 @@ pre :global(code) {
 code {
   font-size: 0.8rem;
   background: #f1f1f1;
-  color: #ef101f;
   padding: 0.2rem;
   border-radius: var(--radius);
   font-family: var(--font-mono);
@@ -393,7 +439,8 @@ code {
 }
 
 footer {
-  padding: 2em 0;
+  padding-top: 3em;
+  padding-bottom: 2em;
   text-align: center;
 }
 

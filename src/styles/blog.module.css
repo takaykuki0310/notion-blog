@@ -43,13 +43,6 @@
   cursor: pointer;
 }
 
-.titleContainer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-family: var(--font-mono);
-  font-weight: 600;
-}
 .draftBadge {
   border-radius: 16px;
   background-color: black;
@@ -67,37 +60,42 @@
 .postPreview {
   max-width: 600px;
   margin: 10px auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  padding-bottom: 10px;
 }
 
 .postPreview:last-child {
   border-bottom: none;
 }
 
-.post,
-.postPreview {
-  padding-left: 24px;
-  background-color: white;
-  border: 1px solid #f0f1f1;
+.postPreview h3 {
+  display: inline;
+  margin: 0;
 }
 
-.postPreview h3,
+.postPreview h3::before {
+  content: '';
+}
+
 .post h1 {
   margin-bottom: 0;
 }
 
 .post h1 {
+  letter-spacing: unset;
   margin-top: 0;
 }
 
 .post :global(h2),
 .post :global(h3) {
-  margin: 3rem 0 1.5rem 0;
+  margin: 2rem 0 1.5rem 0;
 }
 
+.post :global(video),
+.post :global(img) {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
 .post :global(.asset-wrapper) {
-  margin: 2rem auto;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  margin: 3rem auto 2rem;
   max-width: 100%;
   display: block;
 }
@@ -122,20 +120,18 @@
   margin-left: 8px;
 }
 
-.post :global(.underline) {
-  text-decoration: underline;
-}
-
 .postPreview :global(.posted) {
-  color: #6f8383;
-  font-family: var(--font-mono);
-  margin: 1rem 0 1rem;
+  margin: 0.5em 0 0.5em 1em;
 }
 
-.post :global(.posted) {
-  color: #6f8383;
+.postedDate {
+  margin-right: 1rem;
+}
+
+.dateAndTitle {
+  display: inline-flex;
+  align-items: baseline;
   font-family: var(--font-mono);
-  margin: 1rem 0 1rem;
 }
 
 .post {
@@ -144,26 +140,21 @@
   padding: 5%;
 }
 
-.post :global(ul, li) {
-  color: #555;
-  line-height: 1.7;
+.post :global(.posted) {
+  font-family: var(--font-mono);
+  margin: 1rem 0 1rem;
 }
 
 .post :global(hr) {
   margin-bottom: 2em;
 }
 
-.post :global(a) {
-  text-decoration: underline;
-  color: var(--accents-3);
-}
-
-.post :global(a:hover) {
-  cursor: pointer;
-  text-decoration: underline;
-  color: var(--accents-1);
-}
-
 .post :global(a + p) {
   margin-top: 0;
+}
+
+.post :global(ul, li) {
+  font-family: var(--font-mono), var(--font-ja-gothic);
+  color: #555;
+  line-height: 1.7;
 }
