@@ -47,8 +47,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  font-family: var(--font-mono);
-  font-weight: 600;
 }
 .draftBadge {
   border-radius: 16px;
@@ -66,19 +64,7 @@
 
 .postPreview {
   max-width: 600px;
-  margin: 10px auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-}
-
-.postPreview:last-child {
-  border-bottom: none;
-}
-
-.post,
-.postPreview {
-  padding-left: 24px;
-  background-color: white;
-  border: 1px solid #f0f1f1;
+  margin: 0 auto 40px;
 }
 
 .postPreview h3,
@@ -86,18 +72,32 @@
   margin-bottom: 0;
 }
 
+.postPreview p {
+  margin-top: 0.3em;
+}
+
 .post h1 {
   margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  /*font-size: 2.25rem;
+  font-weight: 800;*/
+  letter-spacing: -0.05rem;
 }
 
-.post :global(h2),
+.post :global(h2) {
+  margin: 2.5rem 0 1.25rem 0;
+}
 .post :global(h3) {
-  margin: 3rem 0 1.5rem 0;
+  margin: 2rem 0 1rem 0;
+  font-size: 1em;
 }
 
+.post :global(video),
+.post :global(img),
 .post :global(.asset-wrapper) {
-  margin: 2rem auto;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  /*margin: 2rem auto;*/
+  /*box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);*/
   max-width: 100%;
   display: block;
 }
@@ -116,10 +116,28 @@
   border-style: solid;
   border-color: transparent;
   background: rgba(235, 236, 237, 0.6);
+  color: #222;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.7rem;
 }
 
 .post :global(.callout .text) {
   margin-left: 8px;
+}
+
+.post .caption {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.post blockquote {
+  margin: 0;
+  padding: 0.3em 0.6em;
+  border-left: 5px solid #ddd;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.8em;
 }
 
 .post :global(.underline) {
@@ -127,15 +145,8 @@
 }
 
 .postPreview :global(.posted) {
-  color: #6f8383;
-  font-family: var(--font-mono);
-  margin: 1rem 0 1rem;
-}
-
-.post :global(.posted) {
-  color: #6f8383;
-  font-family: var(--font-mono);
-  margin: 1rem 0 1rem;
+  margin-top: 0.3em;
+  margin-bottom: 0.1em;
 }
 
 .post {
@@ -144,26 +155,32 @@
   padding: 5%;
 }
 
-.post :global(ul, li) {
-  color: #555;
-  line-height: 1.7;
-}
-
 .post :global(hr) {
   margin-bottom: 2em;
 }
 
-.post :global(a) {
-  text-decoration: underline;
-  color: var(--accents-3);
-}
-
-.post :global(a:hover) {
-  cursor: pointer;
-  text-decoration: underline;
-  color: var(--accents-1);
-}
-
 .post :global(a + p) {
   margin-top: 0;
+}
+
+.tagIndex {
+  max-width: calc(600px + 10%);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.noTags {
+  text-align: center;
+}
+
+.tag {
+  font-size: 0.8em;
+  padding-right: 0.8em;
+}
+
+@media (max-width: 600px) {
+  .tag {
+    font-size: 0.75em;
+    padding-right: 0.75em;
+  }
 }

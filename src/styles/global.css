@@ -4,7 +4,7 @@
   --gap: 1rem;
   --gap-double: 2rem;
 
-  --bg: #f9fafb;
+  --bg: #fff;
   --fg: #000;
   --accents-1: #111;
   --accents-2: #333;
@@ -16,67 +16,43 @@
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  --font-mono: 'JetBrains Mono', Menlo, Monaco, Lucida Console, Liberation Mono,
-    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  --font-ja-gothic: 'Hiragino Sans W3', 'Hiragino Kaku Gothic ProN',
-    'ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic';
-}
-
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/eot/JetBrainsMono-Regular.eot')
-      format('embedded-opentype'),
-    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff2/JetBrainsMono-Regular.woff2')
-      format('woff2'),
-    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Regular.woff')
-      format('woff'),
-    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/ttf/JetBrainsMono-Regular.ttf')
-      format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/eot/JetBrainsMono-Italic.eot')
-      format('embedded-opentype'),
-    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff2/JetBrainsMono-Italic.woff2')
-      format('woff2'),
-    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Italic.woff')
-      format('woff'),
-    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/ttf/JetBrainsMono-Italic.ttf')
-      format('truetype');
-  font-weight: normal;
-  font-style: italic;
+  --font-mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 * {
   box-sizing: border-box;
+  word-break: break-word;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    var(--font-ja-gothic), sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI,
+    Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial,
+    メイリオ, Meiryo, sans-serif;
+  /*-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  */
 
-  /*background-image: radial-gradient(#ddd 1px, transparent 1px),*/
-  /*  radial-gradient(#ddd 1px, transparent 1px);*/
+  /*background-image: radial-gradient(#ddd 1px, transparent 1px),
+    radial-gradient(#ddd 1px, transparent 1px);*/
   background-position: 0 0, 25px 25px;
   background-attachment: fixed;
   background-size: 50px 50px;
 
   /* Hack */
   overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 code[class*='language-'],
@@ -274,7 +250,7 @@ pre.dark[class*='language-'] {
 figure {
   font-size: 0.85rem;
   color: #999;
-  line-height: 1.8;
+  line-height: 1.8rem;
 }
 
 figure {
@@ -283,13 +259,11 @@ figure {
 }
 
 a {
-  color: var(--accents-1);
+  color: #0070f3;
   text-decoration: none;
 }
 a:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  color: var(--accents-3);
+  color: #3291ff;
 }
 
 .links {
@@ -312,15 +286,23 @@ mark {
 
 h1 {
   margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
-  font-family: var(--font-mono), var(--font-ja-gothic);
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 700;
+  /*font-size: 2.25rem;
+  font-weight: 800;*/
   letter-spacing: -0.05rem;
 }
 
 h2 {
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
+  letter-spacing: -0.02rem;
+  /*color: var(--accents-3);*/
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1rem;
   letter-spacing: -0.02rem;
 }
 
@@ -338,12 +320,23 @@ h2 {
   outline: none;
 }
 
-p {
-  color: #333;
-  font-family: var(--font-mono), var(--font-ja-gothic);
+.posted {
+  font-size: 0.9rem;
+  color: #222;
+}
+
+ol {
+  color: #222;
   font-weight: 400;
-  font-size: 0.94rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.8rem;
+}
+p,
+ul {
+  color: #222;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.8rem;
 }
 pre {
   white-space: pre;
@@ -356,7 +349,6 @@ pre :global(code) {
 code {
   font-size: 0.8rem;
   background: #f1f1f1;
-  color: #ef101f;
   padding: 0.2rem;
   border-radius: var(--radius);
   font-family: var(--font-mono);
@@ -378,13 +370,30 @@ code {
 }
 
 @media (max-width: 600px) {
+  html {
+    font-size: 18px;
+  }
   .explanation {
-    padding: 0 1rem 4rem;
+    padding: 0 1rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    letter-spacing: 0;
   }
 
   h2 {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     letter-spacing: 0;
+  }
+
+  h3 {
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+
+  .authors .posted {
+    font-size: 0.9rem;
   }
 }
 
@@ -395,17 +404,17 @@ code {
 footer {
   padding: 2em 0;
   text-align: center;
+  font-size: 14px;
 }
 
 footer img {
-  display: block;
-  margin: 0.5rem auto;
+  display: inline-block;
 }
 
-footer span:nth-child(3) {
+footer span {
   color: #777777;
 }
 
-footer span:nth-child(3) a {
+footer span a {
   color: inherit;
 }

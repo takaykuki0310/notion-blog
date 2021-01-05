@@ -6,6 +6,15 @@
   letter-spacing: -0.02em;
 }
 
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.header h1 a {
+  color: #000;
+}
+
 .header ul {
   list-style: none;
   padding: 0;
@@ -16,8 +25,18 @@
   padding: 0 10px;
 }
 
+.header ul :global(a) {
+  color: var(--accents-3);
+  font-weight: 400;
+}
+
+.header ul :global(a.active) {
+  color: #0070f3;
+  font-weight: 600;
+}
+
 @media (max-width: 600px) {
   .header {
-    padding: 0.5em 0 2em;
+    padding: 0.5em 0;
   }
 }
